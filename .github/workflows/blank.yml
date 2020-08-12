@@ -29,8 +29,8 @@ jobs:
         sh update-chnroute.sh
         sh update-chnroute6.sh
         mkdir -p /opt/tmp
-        sudo mv -f scripts/chnroute.ipset /opt/tmp/
-        sudo mv -f scripts/chnroute6.ipset /opt/tmp/
+        sudo mv -f ./scripts/chnroute.ipset /opt/tmp/
+        sudo mv -f ./scripts/chnroute6.ipset /opt/tmp/
     - name: Upload binaries to release
       uses: svenstaro/upload-release-action@v1-release
       with:
