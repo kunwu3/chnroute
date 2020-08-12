@@ -1,0 +1,41 @@
+name: chnroute
+
+on: 
+  release:
+    types: [published]
+#  push:
+#    tags:
+#    - 'v*'
+  #  branches: 
+  #    - master
+  schedule:
+    - cron: 0 17 * * 4
+  watch:
+    types: [started]
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@master
+    - name: Initialization environment
+      env:
+        DEBIAN_FRONTEND: noninteractive
+      run: |
+        cd scripts
+        chmod +x *
+        sh update-chnroute.sh
+        sh update-chnroute6.sh
+        mkdir -p /opt/tmp
+        sudo mv -f scripts/*.ipset /opt/tmp/
+        
+    - name: Upload binaries to release
+      uses: svenstaro/upload-release-action@v1-release
+      with:
+        repo_token: ${{ secrets.R_TOKEN }}
+        file: /opt/tmp/*.ipset
+        tag: AutoBuild
+        overwrite: true
+        file_glob: true
