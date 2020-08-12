@@ -24,13 +24,13 @@ jobs:
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
-        cd scripts
-        chmod +x *
-        sh update-chnroute.sh
-        sh update-chnroute6.sh
-        mkdir -p /opt/tmp
-        sudo mv -f ./scripts/chnroute.ipset /opt/tmp/
-        sudo mv -f ./scripts/chnroute6.ipset /opt/tmp/
+        mkdir -p /opt/tmp/
+        echo "create chnroute hash:net family inet" >chnroute.ipset
+        curl -4sSkL 'http://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest' | grep CN | grep ipv4 | awk -F'|' '{printf("add chnroute %s/%d\n", $4, 32-log($5)/log(2))}' >>chnroute.ipset
+        echo "create chnroute6 hash:net family inet6" >chnroute6.ipset
+        curl -4sSkL 'http://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest' | grep CN | grep ipv6 | awk -F'|' '{printf("add chnroute6 %s/%d\n", $4, $5)}' >>chnroute6.ipset
+        sudo mv chnroute.ipset /opt/tmp/
+        sudo mv chnroute6.ipset /opt/tmp/
     - name: Upload binaries to release
       uses: svenstaro/upload-release-action@v1-release
       with:
