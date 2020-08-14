@@ -29,13 +29,16 @@ jobs:
         curl -4sSkL 'http://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest' | grep CN | grep ipv4 | awk -F'|' '{printf("add chnroute %s/%d\n", $4, 32-log($5)/log(2))}' >>chnroute.ipset
         echo "create chnroute6 hash:net family inet6" >chnroute6.ipset
         curl -4sSkL 'http://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest' | grep CN | grep ipv6 | awk -F'|' '{printf("add chnroute6 %s/%d\n", $4, $5)}' >>chnroute6.ipset
+        data=$(curl -4sSkL 'https://raw.github.com/felixonmars/dnsmasq-china-list/master/accelerated-domains.china.conf')
+        echo "$data" | awk -F/ '{print $2}' | sort | uniq >chnlist.txt
         sudo mv chnroute.ipset /opt/tmp/
         sudo mv chnroute6.ipset /opt/tmp/
+        sudo mv chnlist.txt /opt/tmp/
     - name: Upload binaries to release
       uses: svenstaro/upload-release-action@v1-release
       with:
         repo_token: ${{ secrets.R_TOKEN }}
-        file: /opt/tmp/*.ipset
+        file: /opt/tmp/*
         tag: AutoBuild
         overwrite: true
         file_glob: true
