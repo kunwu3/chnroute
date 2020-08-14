@@ -55,10 +55,21 @@ jobs:
         [ "$base64_decode" ] || { echo "option not supported: base64 -d/--decode"; exit 1; }
         url='https://raw.github.com/gfwlist/gfwlist/master/gfwlist.txt'
         curl -4sSkL "$url" | $base64_decode | { perl -pe "$gfwlist_txt_perl_script_string"; gfwlist_txt_append_domain_names; } | sort | uniq >gfwlist.txt
-        sudo mv chnroute.ipset /opt/tmp/
-        sudo mv chnroute6.ipset /opt/tmp/
-        sudo mv chnlist.txt /opt/tmp/
-        sudo mv gfwlist.txt /opt/tmp/
+        sudo cp chnroute.ipset /opt/tmp/
+        sudo cp chnroute6.ipset /opt/tmp/
+        sudo cp chnlist.txt /opt/tmp/
+        sudo cp gfwlist.txt /opt/tmp/
+    - name: commit
+      run: |
+        git config --global user.email krisvictor3@gmail.com
+        git config --global user.name kunwu3
+        git add .
+        git commit -m "update" -a
+		
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.R_TOKEN }}        
     - name: Upload binaries to release
       uses: svenstaro/upload-release-action@v1-release
       with:
