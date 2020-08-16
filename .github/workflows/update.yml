@@ -59,6 +59,9 @@ jobs:
         sudo cp chnroute6.ipset /opt/tmp/
         sudo cp chnlist.txt /opt/tmp/
         sudo cp gfwlist.txt /opt/tmp/
+        wget -qO chnroute.txt https://raw.githubusercontent.com/pexcn/daily/gh-pages/chnroute/chnroute.txt
+        echo "create chnroute hash:net family inet" >chn.ipset
+        sed 's/^/add chnroute /' chnroute.txt >> chn.ipset
     - name: commit
       run: |
         git config --global user.email krisvictor3@gmail.com
