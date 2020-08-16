@@ -1,9 +1,5 @@
 create chnroute6 hash:net family inet6
-add chnroute6 2001:250::/35
-add chnroute6 2001:250:2000::/35
-add chnroute6 2001:250:4000::/34
-add chnroute6 2001:250:8000::/33
-add chnroute6 2001:251::/32
+add chnroute6 2001:250::/31
 add chnroute6 2001:252::/32
 add chnroute6 2001:254::/32
 add chnroute6 2001:256::/32
@@ -11,8 +7,7 @@ add chnroute6 2001:7fa:5::/48
 add chnroute6 2001:7fa:10::/48
 add chnroute6 2001:c68::/32
 add chnroute6 2001:cc0::/32
-add chnroute6 2001:da8::/32
-add chnroute6 2001:da9::/32
+add chnroute6 2001:da8::/31
 add chnroute6 2001:daa::/32
 add chnroute6 2001:dc7::/32
 add chnroute6 2001:dd8:1::/48
@@ -26,8 +21,8 @@ add chnroute6 2001:df0:2d80::/48
 add chnroute6 2001:df0:2e00::/48
 add chnroute6 2001:df0:2e80::/48
 add chnroute6 2001:df0:4500::/48
-add chnroute6 2001:df0:5d00::/48
-add chnroute6 2001:df0:5d01::/48
+add chnroute6 2001:df0:4580::/48
+add chnroute6 2001:df0:5d00::/47
 add chnroute6 2001:df0:5d80::/48
 add chnroute6 2001:df0:9a00::/48
 add chnroute6 2001:df0:b180::/48
@@ -57,7 +52,7 @@ add chnroute6 2001:df1:f480::/48
 add chnroute6 2001:df1:f580::/48
 add chnroute6 2001:df1:fd80::/48
 add chnroute6 2001:df2:80::/48
-add chnroute6 2001:df2:180::/48
+add chnroute6 2001:df2:180::/47
 add chnroute6 2001:df2:5200::/48
 add chnroute6 2001:df2:5780::/48
 add chnroute6 2001:df2:5a80::/48
@@ -269,10 +264,7 @@ add chnroute6 2400:a6c0::/32
 add chnroute6 2400:a780::/32
 add chnroute6 2400:a8c0::/32
 add chnroute6 2400:a900::/32
-add chnroute6 2400:a980::/32
-add chnroute6 2400:a981::/32
-add chnroute6 2400:a982::/31
-add chnroute6 2400:a984::/30
+add chnroute6 2400:a980::/29
 add chnroute6 2400:abc0::/32
 add chnroute6 2400:ae00::/32
 add chnroute6 2400:b200::/32
@@ -285,8 +277,7 @@ add chnroute6 2400:b7c0::/32
 add chnroute6 2400:b8c0::/32
 add chnroute6 2400:b9c0::/32
 add chnroute6 2400:ba00::/32
-add chnroute6 2400:ba40::/32
-add chnroute6 2400:ba41::/32
+add chnroute6 2400:ba40::/31
 add chnroute6 2400:bac0::/32
 add chnroute6 2400:bc40::/32
 add chnroute6 2400:be00::/32
@@ -459,6 +450,7 @@ add chnroute6 2401:8e40::/32
 add chnroute6 2401:8f40::/32
 add chnroute6 2401:8fc0::/32
 add chnroute6 2401:9340::/32
+add chnroute6 2401:9380::/32
 add chnroute6 2401:9600::/32
 add chnroute6 2401:96c0::/32
 add chnroute6 2401:9740::/32
@@ -510,6 +502,7 @@ add chnroute6 2401:c6c0::/32
 add chnroute6 2401:c840::/32
 add chnroute6 2401:c8c0::/32
 add chnroute6 2401:ca00::/32
+add chnroute6 2401:ca80::/32
 add chnroute6 2401:cb80::/32
 add chnroute6 2401:cc00::/32
 add chnroute6 2401:ce00::/32
@@ -547,6 +540,7 @@ add chnroute6 2401:ffc0::/32
 add chnroute6 2402:440::/32
 add chnroute6 2402:5c0::/32
 add chnroute6 2402:840::/32
+add chnroute6 2402:880::/32
 add chnroute6 2402:ac0::/32
 add chnroute6 2402:e00::/32
 add chnroute6 2402:fc0::/32
@@ -567,6 +561,7 @@ add chnroute6 2402:2440::/32
 add chnroute6 2402:24c0::/32
 add chnroute6 2402:2540::/32
 add chnroute6 2402:2640::/32
+add chnroute6 2402:2780::/32
 add chnroute6 2402:27c0::/32
 add chnroute6 2402:2a00::/32
 add chnroute6 2402:2b80::/32
@@ -1230,6 +1225,7 @@ add chnroute6 2404:d7c0::/32
 add chnroute6 2404:d840::/32
 add chnroute6 2404:dd80::/32
 add chnroute6 2404:df00::/32
+add chnroute6 2404:e180::/32
 add chnroute6 2404:e280::/32
 add chnroute6 2404:e540::/32
 add chnroute6 2404:e5c0::/32
@@ -1700,9 +1696,7 @@ add chnroute6 2406:cb80::/32
 add chnroute6 2406:cc80::/32
 add chnroute6 2406:cd80::/32
 add chnroute6 2406:ce80::/32
-add chnroute6 2406:cf00::/32
-add chnroute6 2406:cf01::/32
-add chnroute6 2406:cf02::/31
+add chnroute6 2406:cf00::/30
 add chnroute6 2406:cf80::/32
 add chnroute6 2406:d080::/32
 add chnroute6 2406:d180::/32
@@ -1857,9 +1851,7 @@ add chnroute6 2407:fc80::/32
 add chnroute6 2407:fd80::/32
 add chnroute6 2408:4000::/22
 add chnroute6 2408:6000::/24
-add chnroute6 2408:8000::/22
-add chnroute6 2408:8400::/22
-add chnroute6 2408:8800::/21
+add chnroute6 2408:8000::/20
 add chnroute6 2409:2000::/21
 add chnroute6 2409:8000::/20
 add chnroute6 240a:4000::/21
@@ -1872,13 +1864,7 @@ add chnroute6 240c:8000::/21
 add chnroute6 240c:c000::/20
 add chnroute6 240d:4000::/21
 add chnroute6 240d:8000::/24
-add chnroute6 240e::/24
-add chnroute6 240e:100::/24
-add chnroute6 240e:200::/23
-add chnroute6 240e:400::/22
-add chnroute6 240e:800::/21
-add chnroute6 240e:1000::/20
-add chnroute6 240e:2000::/19
+add chnroute6 240e::/18
 add chnroute6 240f:4000::/24
 add chnroute6 240f:8000::/24
 add chnroute6 240f:c000::/24
