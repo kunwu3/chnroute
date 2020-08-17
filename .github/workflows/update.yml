@@ -28,6 +28,7 @@ jobs:
         echo "create chnroute6 hash:net family inet6" >chnroute6.ipset
         wget -qO chnroute6.txt https://raw.githubusercontent.com/pexcn/daily/gh-pages/chnroute/chnroute-v6.txt
         sed 's/^/add chnroute6 /' chnroute6.txt >> chnroute6.ipset
+        rm chnroute.txt chnroute6.txt
         sudo cp chnroute.ipset /opt/tmp/
         sudo cp chnroute6.ipset /opt/tmp/
     - name: commit
