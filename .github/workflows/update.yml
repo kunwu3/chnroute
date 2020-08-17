@@ -3,15 +3,12 @@ name: chnroute
 on: 
   release:
     types: [published]
-#  push:
-#    tags:
-#    - 'v*'
-  #  branches: 
-  #    - master
   schedule:
     - cron: 0 17 * * *
   watch:
     types: [started]
+env:
+  TZ: Asia/Shanghai
 
 jobs:
   build:
@@ -35,10 +32,10 @@ jobs:
         sudo cp chnroute6.ipset /opt/tmp/
     - name: commit
       run: |
-        git config --global user.email krisvictor3@gmail.com
-        git config --global user.name kunwu3
+        git config --global user.email action@github.com
+        git config --global user.name github-action
         git add .
-        git commit -m "update" -a	
+        git commit -m "Released on $(date +%m%d%H)" -a	
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
