@@ -36,7 +36,7 @@ jobs:
         git config --global user.email action@github.com
         git config --global user.name github-action
         git add .
-        git commit -m "Released on $(date +%m%d%H)" -a	
+        git commit -m "Released on $(date +%Y%m%d%H%M)" -a	
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
@@ -49,3 +49,4 @@ jobs:
         tag: AutoBuild
         overwrite: true
         file_glob: true
+        body: "Released on $(date +%Y%m%d%H%M)"
