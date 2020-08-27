@@ -1604,6 +1604,7 @@ add chnroute6 2406:6180::/32
 add chnroute6 2406:61c0::/30
 add chnroute6 2406:6280::/32
 add chnroute6 2406:6300::/32
+add chnroute6 2406:6340::/32
 add chnroute6 2406:6380::/32
 add chnroute6 2406:6480::/32
 add chnroute6 2406:6500::/32
