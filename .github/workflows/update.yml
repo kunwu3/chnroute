@@ -49,4 +49,4 @@ jobs:
         tag: AutoBuild
         overwrite: true
         file_glob: true
-        body: "Released on $(date +%Y%m%d%H%M)"
+        body: "Self-use purpose"
