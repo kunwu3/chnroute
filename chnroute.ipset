@@ -3055,7 +3055,6 @@ add chnroute 113.208.96.0/19
 add chnroute 113.208.128.0/17
 add chnroute 113.209.0.0/16
 add chnroute 113.212.0.0/18
-add chnroute 113.212.64.0/22
 add chnroute 113.212.88.0/22
 add chnroute 113.212.100.0/22
 add chnroute 113.212.184.0/21
