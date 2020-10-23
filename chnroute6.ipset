@@ -1872,6 +1872,7 @@ add chnroute6 2408:4000::/22
 add chnroute6 2408:6000::/24
 add chnroute6 2408:8000::/20
 add chnroute6 2409:2000::/21
+add chnroute6 2409:6000::/20
 add chnroute6 2409:8000::/20
 add chnroute6 240a:4000::/21
 add chnroute6 240a:8000::/21
