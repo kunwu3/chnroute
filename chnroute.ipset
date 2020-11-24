@@ -254,7 +254,9 @@ add chnroute 42.240.0.0/16
 add chnroute 42.242.0.0/15
 add chnroute 42.244.0.0/14
 add chnroute 42.248.0.0/13
-add chnroute 43.128.0.0/10
+add chnroute 43.136.0.0/13
+add chnroute 43.144.0.0/12
+add chnroute 43.160.0.0/11
 add chnroute 43.224.12.0/22
 add chnroute 43.224.24.0/22
 add chnroute 43.224.44.0/22
