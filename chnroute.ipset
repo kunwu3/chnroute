@@ -2390,6 +2390,7 @@ add chnroute 103.159.122.0/23
 add chnroute 103.159.124.0/23
 add chnroute 103.159.134.0/23
 add chnroute 103.159.142.0/23
+add chnroute 103.160.32.0/22
 add chnroute 103.192.0.0/19
 add chnroute 103.192.48.0/21
 add chnroute 103.192.56.0/22
