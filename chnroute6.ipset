@@ -1763,6 +1763,7 @@ add chnroute6 2406:ea40::/28
 add chnroute6 2406:f280::/32
 add chnroute6 2406:f300::/32
 add chnroute6 2406:f4c0::/32
+add chnroute6 2406:f7c0::/32
 add chnroute6 2406:f980::/32
 add chnroute6 2406:fc80::/32
 add chnroute6 2406:fd80::/32
